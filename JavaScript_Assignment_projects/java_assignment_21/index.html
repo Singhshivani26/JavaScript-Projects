@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Transportation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .container {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        input, button {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #2f80ed;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #56ccf2;
+        }
+        .output {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Public Transportation System</h1>
+    <div class="container">
+        <h3>Add a Vehicle</h3>
+        <input type="text" id="vehicleType" placeholder="Enter Vehicle Type (e.g., Bus, Train)">
+        <input type="text" id="vehicleNumber" placeholder="Enter Vehicle Number">
+        <input type="number" id="vehicleCapacity" placeholder="Enter Capacity">
+        <button id="addVehicleButton">Add Vehicle</button>
+
+        <h3>Add a Passenger</h3>
+        <input type="text" id="passengerName" placeholder="Enter Passenger Name">
+        <input type="number" id="passengerAge" placeholder="Enter Passenger Age">
+        <input type="text" id="passengerDestination" placeholder="Enter Destination">
+        <button id="addPassengerButton">Add Passenger</button>
+
+        <h3>Actions</h3>
+        <button id="listVehiclesButton">List All Vehicles</button>
+        <button id="listPassengersButton">List All Passengers</button>
+        <div id="output" class="output"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

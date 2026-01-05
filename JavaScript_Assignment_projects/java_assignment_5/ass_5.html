@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Order and Day of the Week</title>
+</head>
+<body>
+    <h1>Day of the Week and Fruit Order</h1>
+
+    <script>
+        // Task 1: Prompt user to enter a day of the week and display it using switch...case
+        let dayNumber = parseInt(prompt("Enter a day of the week (1 for Sunday, 7 for Saturday):"));
+
+        switch(dayNumber) {
+            case 1:
+                console.log("Sunday");
+                break;
+            case 2:
+                console.log("Monday");
+                break;
+            case 3:
+                console.log("Tuesday");
+                break;
+            case 4:
+                console.log("Wednesday");
+                break;
+            case 5:
+                console.log("Thursday");
+                break;
+            case 6:
+                console.log("Friday");
+                break;
+            case 7:
+                console.log("Saturday");
+                break;
+            default:
+                console.log("Invalid day number, please enter a number between 1 and 7.");
+        }
+
+        // Task 2: Display menu of fruits and prices, then prompt user for choice and quantity
+        const fruits = [
+            {name: "Apple", price: 0.99},
+            {name: "Pear", price: 0.79},
+            {name: "Orange", price: 1.19},
+            {name: "Grapes", price: 1.49},
+            {name: "Grapefruit", price: 1.79},
+            {name: "Kiwi", price: 0.79},
+            {name: "Apricots", price: 1.29}
+        ];
+
+        let menu = "Fruit Menu:\n";
+        for (let i = 0; i < fruits.length; i++) {
+            menu += `${i+1}) ${fruits[i].name} $${fruits[i].price.toFixed(2)}\n`;
+        }
+        alert(menu);
+
+        let fruitChoice = parseInt(prompt("Which fruit would you like to purchase? Enter a number (1-7):"));
+        let quantity = parseInt(prompt("How many of these fruits would you like to purchase?"));
+
+        if (fruitChoice >= 1 && fruitChoice <= 7 && quantity > 0) {
+            let fruit = fruits[fruitChoice - 1];
+            let totalPrice = fruit.price * quantity;
+            alert(`${quantity} ${fruit.name}s $${totalPrice.toFixed(2)}`);
+        } else {
+            alert("Invalid input. Please make sure the fruit choice is between 1 and 7, and the quantity is positive.");
+        }
+    </script>
+
+</body>
+</html>

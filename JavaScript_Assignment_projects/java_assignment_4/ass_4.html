@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Club Billing</title>
+</head>
+<body>
+    <!-- Logical division to display the bill details -->
+    <div id="output"></div>
+
+    <script>
+        // Prompt the user for the additional charges
+        let amount = parseFloat(prompt("How much did the member spend this month in additional charges?"));
+
+        // Constants
+        const membershipFee = 500;
+        const taxRate = 0.0625;
+
+        // Calculate the subtotal
+        let subtotal = membershipFee + amount;
+
+        // Determine discount percentage
+        let discountPercentage = 0;
+        if (amount >= 250 && amount <= 500) {
+            discountPercentage = 10;
+        } else if (amount >= 501 && amount <= 1000) {
+            discountPercentage = 12.5;
+        } else if (amount >= 1001 && amount <= 2000) {
+            discountPercentage = 15;
+        } else if (amount > 2000) {
+            discountPercentage = 20;
+        }
+
+        // Calculate discount, final fee, tax, and grand total
+        let discount = (subtotal * discountPercentage) / 100;
+        let finalFee = subtotal - discount;
+        let tax = finalFee * taxRate;
+        let grandTotal = finalFee + tax;
+
+        // Output the results
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+            <h1>Tennis Club Monthly Bill</h1>
+            <p>Membership Fee: $${membershipFee.toFixed(2)}</p>
+            <p>Additional Fees: $${amount.toFixed(2)}</p>
+            <p>Subtotal: $${subtotal.toFixed(2)}</p>
+            <p>Discount: ${discountPercentage}%</p>
+            <p>Final Fee Bill: $${finalFee.toFixed(2)}</p>
+            <p>Tax: $${tax.toFixed(2)}</p>
+            <p><strong>Grand Total: $${grandTotal.toFixed(2)}</strong></p>
+        `;
+    </script>
+</body>
+</html>

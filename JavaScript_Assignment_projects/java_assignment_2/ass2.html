@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+</head>
+<body>
+    <!-- Logical division to display the information -->
+    <div id="output"></div>
+
+    <script>
+        // Declare variables with initial values
+        const firstName = "Shivani";
+        const lastName = "Singh";
+        const emailAddress = "shivani.singh@example.com";
+        const department = "Engineering";
+        const salary = 50000;
+
+        // Output information to the logical division in the HTML body
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+            <p>First Name: ${firstName}</p>
+            <p>Last Name: ${lastName}</p>
+            <p>Email Address: ${emailAddress}</p>
+            <p>Department: ${department}</p>
+            <p>Salary: $${salary}</p>
+        `;
+    </script>
+</body>
+</html>

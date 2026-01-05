@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Search</title>
+</head>
+<body>
+  <h1>Movie Search</h1>
+
+  <form id="search-form">
+    <label for="movie-title">Enter Movie Title:</label>
+    <input type="text" id="movie-title" name="movie-title" required />
+    <button type="submit">Search</button>
+  </form>
+
+  <label for="year-filter">Filter by Year:</label>
+  <input type="number" id="year-filter" name="year-filter" />
+
+  <div id="loading" style="display: none;">Loading...</div>
+  <div id="movie-list"></div>
+
+  <script src="movie_search.js"></script>
+</body>
+</html>

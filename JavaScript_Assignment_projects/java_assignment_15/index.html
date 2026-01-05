@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NY Subway Lines</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #station-list {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>NY Subway Line Information</h1>
+  
+  <div>
+    <label for="line-name">Enter Subway Line Number (e.g., 1, 2, 3): </label>
+    <input type="text" id="line-name" />
+    <button id="get-stations">Get Stations</button>
+  </div>
+
+  <div id="station-list"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

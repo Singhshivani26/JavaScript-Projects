@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Parsing Example</title>
+</head>
+<body>
+
+    <h1>Bookstore Information</h1>
+    <div id="bookstore-details"></div>
+
+    <script>
+        // Step 1: XML string (copy the XML from the file directly)
+        var xmlString = `
+        <bookstore name="Fictional Books">
+            <book>
+                <title>The Shawshank Redemption</title>
+                <author>Stephen King</author>
+                <year>1982</year>
+                <price>10.99</price>
+            </book>
+            <book>
+                <title>The Godfather</title>
+                <author>Mario Puzo</author>
+                <year>1969</year>
+                <price>9.99</price>
+            </book>
+        </bookstore>`;
+
+        // Step 2: Parse the XML string using DOMParser
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+
+        // Step 3: Access the book elements and loop through them
+        var books = xmlDoc.getElementsByTagName("book");
+
+        // Step 4: Dynamically create HTML content to display book details
+        var bookstoreDetails = document.getElementById("bookstore-details");
+        var bookstore = xmlDoc.getElementsByTagName("bookstore")[0];
+        var bookstoreName = bookstore.getAttribute("name");
+
+        bookstoreDetails.innerHTML = `<h2>Bookstore: ${bookstoreName}</h2>`;
+
+        for (var i = 0; i < books.length; i++) {
+            var title = books[i].getElementsByTagName("title")[0].textContent;
+            var author = books[i].getElementsByTagName("author")[0].textContent;
+            var year = books[i].getElementsByTagName("year")[0].textContent;
+            var price = books[i].getElementsByTagName("price")[0].textContent;
+
+            // Create HTML content for each book
+            var bookDiv = document.createElement("div");
+            bookDiv.innerHTML = `
+                <h3>${title}</h3>
+                <p><strong>Author:</strong> ${author}</p>
+                <p><strong>Year:</strong> ${year}</p>
+                <p><strong>Price:</strong> $${price}</p>
+            `;
+            bookstoreDetails.appendChild(bookDiv);
+        }
+    </script>
+
+</body>
+</html>

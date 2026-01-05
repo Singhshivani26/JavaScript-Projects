@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball Statistics</title>
+</head>
+<body>
+    <!-- Logical division to display the statistics -->
+    <div id="output"></div>
+
+    <script>
+        // Initialize variables
+        let atBats = 300;
+        let hits = 65;
+        let singles = 50;
+        let doubles = 5;
+        let triples = 3;
+        let homeruns = 7;
+        let walks = 22;
+
+        // Calculate baseball statistics
+        let battingAverage = hits / (atBats - walks);
+        let onBasePercentage = (hits + walks) / atBats;
+        let totalBases = singles + (doubles * 2) + (triples * 3) + (homeruns * 4);
+
+        // Output the results
+        const outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = `
+            <h1>Baseball Statistics</h1>
+            <h2>Batting Average: ${battingAverage.toFixed(3)}</h2>
+            <h2>On Base Percentage: ${onBasePercentage.toFixed(3)}</h2>
+            <h2>Total Bases: ${totalBases}</h2>
+        `;
+    </script>
+</body>
+</html>

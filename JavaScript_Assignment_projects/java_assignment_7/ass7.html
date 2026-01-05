@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops Assignment</title>
+</head>
+<body>
+    <h1>Loops Assignment</h1>
+
+    <script>
+        // 1) Count from 100 to 100 by 10’s
+        console.log("Counting from 100 to 100 by 10's:");
+        for (let i = 100; i <= 100; i += 10) {
+            console.log(i);
+        }
+
+        // 2) Count from 100 to 0 displaying only the odd numbers
+        console.log("Counting from 100 to 0 (odd numbers only):");
+        for (let i = 100; i >= 0; i--) {  // Start from 100 and decrement by 1
+            if (i % 2 !== 0) {  // Check if the number is odd
+                console.log(i);
+            }
+        }
+
+        // 3) Print 10 rows of asterisks. In the first row print one, in the second row two, and so on.
+        console.log("Printing 10 rows of asterisks:");
+        for (let i = 1; i <= 10; i++) {
+            let row = "*".repeat(i); // Repeat the asterisk i times for the current row
+            console.log(row);
+        }
+    </script>
+
+</body>
+</html>

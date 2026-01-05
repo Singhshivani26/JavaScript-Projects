@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #weather-info {
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <p>Enter a city name to get the current weather information.</p>
+    <input type="text" id="city-input" placeholder="Enter city name">
+    <button id="fetch-weather">Get Weather</button>
+    <div id="weather-info"></div>
+    <script src="weather.js"></script>
+</body>
+</html>

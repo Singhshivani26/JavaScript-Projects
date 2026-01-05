@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        #container {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+
+        #red {
+            background-color: red;
+            margin-bottom: 20px;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        button {
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="red"></div>
+        <div id="blue"></div>
+        <p>Click a box to change its background color.</p>
+        <button>Switch Colors</button>
+    </div>
+
+    <script>
+        // Function to generate a random number between 0 and 255
+        function getRandomColorValue() {
+            return Math.round(Math.random() * 255);
+        }
+
+        // Function to change the background color of the clicked box
+        function changeColor(event) {
+            const randomColor = `rgb(${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()})`;
+            event.target.style.backgroundColor = randomColor;
+        }
+
+        // Get the red and blue div elements
+        const redBox = document.getElementById("red");
+        const blueBox = document.getElementById("blue");
+
+        // Add click event listeners to both boxes
+        redBox.addEventListener("click", changeColor);
+        blueBox.addEventListener("click", changeColor);
+
+        // Add an event listener to the button to switch the background colors of the divs
+        const button = document.querySelector("button");
+        button.addEventListener("click", () => {
+            const redBoxColor = redBox.style.backgroundColor;
+            redBox.style.backgroundColor = blueBox.style.backgroundColor;
+            blueBox.style.backgroundColor = redBoxColor;
+        });
+    </script>
+</body>
+</html>

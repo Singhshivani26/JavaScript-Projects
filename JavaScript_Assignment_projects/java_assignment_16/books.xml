@@ -1,0 +1,14 @@
+<bookstore name="Fictional Books">
+    <book>
+        <title>The Shawshank Redemption</title>
+        <author>Stephen King</author>
+        <year>1982</year>
+        <price>10.99</price>
+    </book>
+    <book>
+        <title>The Godfather</title>
+        <author>Mario Puzo</author>
+        <year>1969</year>
+        <price>9.99</price>
+    </book>
+</bookstore>

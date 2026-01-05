@@ -1,0 +1,40 @@
+{
+    "lines": {
+      "1": {
+        "name": "1",
+        "color": "red",
+        "stations": [
+          "South Ferry",
+          "Whitehall St",
+          "Wall St",
+          "Fulton St",
+          "Canal St",
+          "Houston St",
+          "Christopher St"
+        ]
+      },
+      "2": {
+        "name": "2",
+        "color": "green",
+        "stations": [
+          "Wakefield – 241st St",
+          "Nereid Ave",
+          "233rd St",
+          "225th St",
+          "215th St"
+        ]
+      },
+      "3": {
+        "name": "3",
+        "color": "blue",
+        "stations": [
+          "Harlem-148th St",
+          "145th St",
+          "135th St",
+          "125th St",
+          "116th St"
+        ]
+      }
+    }
+  }
+  
